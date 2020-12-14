@@ -1,0 +1,11 @@
+// this is just a program
+
+/* another comment on a single line */
+int main() {
+
+/* this is a multiline comment
+explaining the purpuse of this program */
+
+  std::cout << "Hello World" << std::endl ; // print message to the console
+}
+// end of program
