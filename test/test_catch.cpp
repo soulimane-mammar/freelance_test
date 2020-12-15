@@ -3,6 +3,8 @@
 #include <mymath.hpp>
 #include <myfile.hpp>
 
+using namespace Catch::literals;
+
 TEST_CASE("Freelance point 3")
 {
     SECTION("square_by_refrence")
@@ -43,5 +45,47 @@ TEST_CASE("Freelance point 1", )
         fp.remove_comments();
 
         REQUIRE(true);
+    }
+}
+
+TEST_CASE("power_1")
+{
+    SECTION("gives the expected calcuation")
+    {
+        REQUIRE(freelance::MyMath::power_1(3.0) == 9.0_a);
+        REQUIRE(freelance::MyMath::power_1(3.0, 3) == 27.0_a);
+        REQUIRE(freelance::MyMath::power_1(3.5, 4) == 150.0625_a);
+    }
+    SECTION("throw when negative exponent")
+    {
+        REQUIRE_THROWS_AS(freelance::MyMath::power_1(3.0, -3), std::runtime_error);
+    }
+}
+
+TEST_CASE("power_2")
+{
+    SECTION("gives the expected calcuation")
+    {
+        REQUIRE(freelance::MyMath::power_2(3.0) == 9.0_a);
+        REQUIRE(freelance::MyMath::power_2(3.0, 3) == 27.0_a);
+        REQUIRE(freelance::MyMath::power_2(3.5, 4) == 150.0625_a);
+    }
+    SECTION("throw when negative exponent")
+    {
+        REQUIRE_THROWS_AS(freelance::MyMath::power_2(3.0, -3), std::runtime_error);
+    }
+}
+
+TEST_CASE("power_3")
+{
+    SECTION("gives the expected calcuation")
+    {
+        REQUIRE(freelance::MyMath::power_3(3.0) == 9.0_a);
+        REQUIRE(freelance::MyMath::power_3(3.0, 3) == 27.0_a);
+        REQUIRE(freelance::MyMath::power_3(3.5, 4) == 150.0625_a);
+    }
+    SECTION("throw when negative exponent")
+    {
+        REQUIRE_THROWS_AS(freelance::MyMath::power_3(3.0, -3), std::runtime_error);
     }
 }

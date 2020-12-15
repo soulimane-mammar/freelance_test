@@ -24,7 +24,7 @@ TEST(Freelance, file_processor_creation_noexcept)
     EXPECT_NO_THROW(freelance::FileProcessor fp{"example.txt"});
 }
 
-TEST(Freelance, file_processor_remove_comment)
+TEST(Freelance, file_processor_remove_comments)
 {
     /*
         I don't want to implement a whole test for this.
@@ -38,3 +38,40 @@ TEST(Freelance, file_processor_remove_comment)
 
     ASSERT_TRUE(true);
 }
+TEST(Freelance, power_1)
+{
+    ASSERT_FLOAT_EQ(freelance::MyMath::power_1(3.0), 9.0);
+    ASSERT_FLOAT_EQ(freelance::MyMath::power_1(3.0, 3), 27.0);
+    ASSERT_FLOAT_EQ(freelance::MyMath::power_1(3.5, 4), 150.0625);
+};
+
+TEST(Freelance, power_1_throw)
+{
+
+    ASSERT_THROW(freelance::MyMath::power_1(3.0, -3), std::runtime_error);
+};
+
+TEST(Freelance, power_2)
+{
+    ASSERT_FLOAT_EQ(freelance::MyMath::power_2(3.0), 9.0);
+    ASSERT_FLOAT_EQ(freelance::MyMath::power_2(3.0, 3), 27.0);
+    ASSERT_FLOAT_EQ(freelance::MyMath::power_2(3.5, 4), 150.0625);
+};
+
+TEST(Freelance, power_2_throw)
+{
+
+    ASSERT_THROW(freelance::MyMath::power_2(3.0, -3), std::runtime_error);
+};
+
+TEST(Freelance, power_3)
+{
+    ASSERT_FLOAT_EQ(freelance::MyMath::power_3(3.0), 9.0);
+    ASSERT_FLOAT_EQ(freelance::MyMath::power_3(3.0, 3), 27.0);
+    ASSERT_FLOAT_EQ(freelance::MyMath::power_3(3.5, 4), 150.0625);
+};
+TEST(Freelance, power_3_throw)
+{
+
+    ASSERT_THROW(freelance::MyMath::power_3(3.0, -3), std::runtime_error);
+};
