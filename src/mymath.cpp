@@ -14,7 +14,8 @@ namespace freelance
     };
 
     //power(double,int): first implementation
-    //readable but not efficient
+    //readable but not efficient (unless the compiler do good job and optimize the recursive calls)
+    // I could make it constexpr if we need this function at compile time
     // this implementation is naive and don't take into account possible overflows when n is too big
     double MyMath::power_1(double m, int n)
     {
